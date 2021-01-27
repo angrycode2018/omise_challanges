@@ -7,8 +7,10 @@ export default function PostItem(props) {
 
     return ( 
         <div className="Post__item">
-            <div className="Post__title">{name}</div>
-            <img className="Post__image" src={`https://source.unsplash.com/random?sig=${id}`}/>
+            <header className="Post__title">{name}</header>
+            <img className="Post__image" src={`./images/${image}`}/>
         </div>
     )
 }
+
+// src={`https://source.unsplash.com/random?sig=${id}`}

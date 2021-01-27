@@ -20,13 +20,13 @@ body {
 .Post__item {
     border: 1px solid hsl(216, 10%, 87%);
     border-radius: 4px;
-    background-color: #fae9e9;
+    background-color: #f7f7f7;
     margin: 20px 20px;
     padding: 15px;
 }
 
 .Post__title {
-    font-weight: bold;
+    font-weight: 400;
     font-size: 20px;
 }
 
