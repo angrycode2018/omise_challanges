@@ -27,9 +27,7 @@ export default function Posts(props) {
 
 
     return (
-    <div className="Post" style={{border: "2px solid red"}}>
-        <h4>{title}</h4>
-        <h4>{message}</h4>
+    <div className="Post">
         {showCharities()}
     </div>
     )
