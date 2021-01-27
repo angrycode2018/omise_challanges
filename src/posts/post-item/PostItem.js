@@ -6,8 +6,8 @@ export default function PostItem(props) {
 
 
     return ( 
-        <div className="Post__item" style={{backgroundColor: "pink"}}>
-            <h4>{name}</h4>
+        <div className="Post__item">
+            <div className="Post__title">{name}</div>
             <img className="Post__image" src={`https://source.unsplash.com/random?sig=${id}`}/>
         </div>
     )
