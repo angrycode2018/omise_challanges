@@ -1,33 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import JsonServer from './services/JsonServer';
-import Posts from './components/posts/Posts'
+import Posts from './components/posts/Posts';
+// import PaymentContext from './PaymentContext';
 import './App.css';
+
+// const {Consumer, Provider} = React.createContext()
+const api = new JsonServer();
+// console.log('PaymentContext:', Consumer)
 
 
 function App() {
   
-  const [title, setTitle]  = useState('App Title');
   const [charities, setCharity] = useState([]);
   const [payments, setPayment] = useState([]);
+  // const data = useContext(PaymentContext);
   const message = 'This is massage from App component.';
+
   
   useEffect( () => { 
-    const api = new JsonServer();
-    api.get('charities').then( data => setCharity(data)).catch(err => console.log(err));
-    api.get('payments').then(data => setPayment(data)).catch(err => console.log(`Error API Payments:`, err));
-  }, []);
+    api.get('charities')
+    .then( data => setCharity(data))
+      .catch(err => console.log(err));
 
-  const play = () => {
-    setTimeout(()=>{ setTitle('New App Title is set!') }, 3000);
-    document.title = `You clicked  times`;
-  }
+    // api.get('payments')
+    // .then(data => setPayment(data))
+    //   .catch(err => console.log(`Error API Payments:`, err));
+
+  },[]);
 
   
   return (
-    <div className="App">
-      <header>{title}</header>
-        <Posts message={message} charities={charities} payments={payments}/>
-    </div>
+   
+      <div className="App">
+        <header>{'OMISE CHALLANGES'}</header>
+        <Posts message={message} charities={charities} />
+      </div>
+
   );
 }
 
