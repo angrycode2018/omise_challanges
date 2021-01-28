@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, {css} from 'styled-components'
 
-export default function Button(props) {
+export default function Button({onClick}) {
     const Button = styled.button`
     background: transparent;
     border-radius: 3px;
@@ -21,7 +21,7 @@ export default function Button(props) {
   
   return(
     <Container>
-      <Button primary onClick={props.onClick}>Donate</Button>
+      <Button primary onClick={onClick}>Donate</Button>
     </Container>
   );
 }
