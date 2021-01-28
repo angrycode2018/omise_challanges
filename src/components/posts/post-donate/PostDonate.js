@@ -12,6 +12,8 @@ export default function PostDonate() {
     },[])
 
     const handleChange = ({target}) => {
+        checkbox.name !== 'undefined' && checkbox.name !== target.name ? checkbox.checked = false: checkbox.checked = target.checked;
+        setCheckbox(target);
         const {type, name ,value, checked} = target
         console.log(`Type: ${type}, Name: ${name}, Value: ${value}, Checked: ${checked}`)
         console.log('Target', target)
