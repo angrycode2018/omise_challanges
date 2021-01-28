@@ -71,6 +71,11 @@ body {
     background-color: rgb(226, 219, 220, 27%);
     height: 200px;
     margin: 20px 0px;
+    padding: 20px;
+}
+
+.Post__donate__content {
+    margin: 10px;
 }
 
 .Button__donate {
