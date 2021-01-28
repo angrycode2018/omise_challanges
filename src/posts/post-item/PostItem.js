@@ -11,7 +11,7 @@ export default function PostItem(props) {
                 {name}
                 <Button onClick={()=>setHidden(false)}/>
             </header>
-            <div className={`Post__donate ${hidden ? 'hide' : ''}`}>
+            <div className={`Post__donate ${hidden ? 'hide' : ''}`} onMouseLeave={()=>setHidden(true)}>
                 This content is hidden.
                 <button type="button" className="Btn__close" onClick={()=>setHidden(true)}>X</button>
             </div>
