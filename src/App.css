@@ -91,6 +91,27 @@ body {
     cursor: pointer;
 }
 
+.Form__donate {
+    margin: 20px;
+    text-align: center;
+}
+
+.Form__checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 20px;
+}
+
+.Form__submit {
+    font-size: '25px'; 
+    padding: '5px'; 
+    width: '160px'; 
+    cursor: 'pointer';
+}
+
+
+
 .hide {
     display: none;
 }
