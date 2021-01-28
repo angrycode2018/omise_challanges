@@ -2,8 +2,10 @@ import React from 'react'
 import PostItem from './post-item/PostItem'
 
 export default function Posts(props) {
+  // const test = useContext(PaymentContext);
     const {message, charities, payments} = props
     const title = 'Posts Component'
+    // console.log('Test: ',test)
 
     const showCharities = () => {
         return charities.map( (item, index) => {
