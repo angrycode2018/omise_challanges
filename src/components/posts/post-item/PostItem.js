@@ -8,8 +8,8 @@ export default function PostItem(props) {
     return ( 
         <div className="Post__item">
             <header className="Post__title">
-                {name}
                 <Button onClick={()=>setHidden(false)}/>
+                {name}
             </header>
             <div className={`Post__donate ${hidden ? 'hide' : ''}`} onMouseLeave={()=>setHidden(true)}>
                 <button type="button" className="Btn__close" onClick={()=>setHidden(true)}>X</button>
