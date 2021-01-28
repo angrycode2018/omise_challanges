@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import API from './API';
-import Posts from './posts/Posts'
+import JsonServer from './services/JsonServer';
+import Posts from './components/posts/Posts'
 import './App.css';
 
 
@@ -12,7 +12,7 @@ function App() {
   const message = 'This is massage from App component.';
   
   useEffect( () => { 
-    const api = new API();
+    const api = new JsonServer();
     api.get('charities').then( data => setCharity(data)).catch(err => console.log(err));
     api.get('payments').then(data => setPayment(data)).catch(err => console.log(`Error API Payments:`, err));
   }, []);
