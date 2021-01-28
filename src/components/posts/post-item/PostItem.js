@@ -15,7 +15,7 @@ export default function PostItem(props) {
             <div className={`Post__donate ${hidden ? 'hide' : ''}`} onMouseLeave={()=>setHidden(true)}>
                 <button type="button" className="Btn__close" onClick={()=>setHidden(true)}>X</button>
                 <div className="Post__donate__content">
-                    <PostDonate />
+                    <PostDonate charitiesId={id} name={name} currency={currency}/>
                 </div>
             </div>
             <img className="Post__image" src={`./images/${image}`}/>
