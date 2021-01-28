@@ -15,11 +15,13 @@ export default class JsonServer {
     //Return Promise with res.ok
     post = (item, path) => {
         const url = this.serverURL + path;
+        // const url = 'http://localhost:3001/payments'
         const options = {
             'method': 'post',
             'headers': { 'content-type': 'application/json' },
             'body': JSON.stringify(item)
         }
+        // console.log('Options: ',options)
         return fetch(url, options)
                 .then(res => res.ok)
                     .catch(err => console.log('Post Error: ', err))
