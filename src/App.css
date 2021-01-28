@@ -28,9 +28,32 @@ body {
 .Post__title {
     font-weight: 400;
     font-size: 20px;
+    line-height: 50px;
 }
 
 .Post__image {
     width: 100%;
     margin-top: 15px;
+}
+
+.Post__donate {
+    background-color: rgb(226, 219, 220);
+    height: 200px;
+}
+
+.Button__donate {
+    cursor: pointer;
+}
+
+.Btn__close {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 5px 5px;
+    float: right;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
 }
