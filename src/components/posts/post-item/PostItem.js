@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Button from '../../button/Button'
 import PostDonate from '../post-donate/PostDonate'
 
-export default function PostItem(props) {
-    const {id, name, image, currency} = props
+export default function PostItem({id, name, image, currency} ) {
     const [hidden, setHidden] = useState(true)
 
     return ( 

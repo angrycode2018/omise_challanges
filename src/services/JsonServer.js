@@ -7,7 +7,7 @@ export default class JsonServer {
             const url = this.serverURL + path;
             return fetch(url)
                     .then(response => response.json())
-                        .catch(err => console.log(err))
+                        .catch(err => console.error(`Fail to GET ${path.toUpperCase()} from Json-Server `, err))
         }
 
 
@@ -24,7 +24,7 @@ export default class JsonServer {
         // console.log('Options: ',options)
         return fetch(url, options)
                 .then(res => res.ok)
-                    .catch(err => console.log('Post Error: ', err))
+                    .catch(err => console.error(`Fail to POST ${path.toUpperCase()} to Json-Server `, err))
     }
 
         //Update DB and Return Promise with res.ok
@@ -38,7 +38,7 @@ export default class JsonServer {
             }
             return fetch(url, options)
                     .then(res => res.ok)
-                        .catch(err => console.log('UpdateError:', err))
+                        .catch(err => console.error(`Fail to PUT ${path.toUpperCase()} to Json-Server `, err))
         }
 
 
@@ -52,7 +52,7 @@ export default class JsonServer {
         }
         return fetch(url, options)
                 .then(res => res.ok)
-                    .catch(err => console.log('ErrDelete:', err))
+                    .catch(err => console.error(`Fail to DELETE ${path.toUpperCase()} from Json-Server `, err))
     }
 
     
