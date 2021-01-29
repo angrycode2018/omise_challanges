@@ -114,6 +114,8 @@ body {
     color: #ffffff;
     padding: 10px;
     background: #22AAA1;
+    text-align: center;
+    font-size: x-large;
 }
 
 .hide {
