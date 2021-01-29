@@ -11,7 +11,7 @@ export default function PostDonate({charitiesId, name, currency}) {
     const PaymentPromise  = useContext(PaymentContext);
 
     useEffect(()=>{
-        PaymentPromise.then(data => setPayments(data)).catch(e => console.log('HEY, ', e))
+        PaymentPromise.then(data => data ? setPayments(data): false).catch(e => console.log('ERROR: PaymentContext ', e))
     },[])
 
     const handleChange = ({target}) => {
