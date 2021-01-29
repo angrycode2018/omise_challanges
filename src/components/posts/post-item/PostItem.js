@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from '../../button/Button'
 import PostDonate from '../post-donate/PostDonate'
 
-export default function PostItem({id, name, image, currency} ) {
+export default function PostItem({payments, setPayments, id, name, image, currency} ) {
     const [hidden, setHidden] = useState(true)
 
     return ( 
@@ -14,7 +14,7 @@ export default function PostItem({id, name, image, currency} ) {
             <div className={`Post__donate ${hidden ? 'hide' : ''}`} onMouseLeave={()=>setHidden(true)}>
                 <button type="button" className="Btn__close" onClick={()=>setHidden(true)}>X</button>
                 <div className="Post__donate__content">
-                    <PostDonate charitiesId={id} name={name} currency={currency}/>
+                    <PostDonate payments={payments} setPayments={setPayments} charitiesId={id} name={name} currency={currency}/>
                 </div>
             </div>
             <img className="Post__image" src={`./images/${image}`}/>
