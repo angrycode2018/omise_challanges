@@ -1,5 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
-// import PaymentContext from '../../../PaymentContext'
+import React, { useState } from 'react'
 import JsonServer from '../../../services/JsonServer'
 
 const api = new JsonServer()
@@ -7,12 +6,6 @@ const api = new JsonServer()
 export default function PostDonate({payments, setPayments, charitiesId, name, currency}) {
 
     const [checkbox, setCheckbox] = useState({});
-    // const [payments, setPayments] = useState([]);
-    // const PaymentPromise  = useContext(PaymentContext);
-
-    // useEffect(()=>{
-    //     api.get('payments').then(data => data ? setPayments(data): false).catch(e => console.log('ERROR: PaymentContext ', e))
-    // },[])
 
     const handleChange = ({target}) => {
         checkbox.name !== 'undefined' && checkbox.name !== target.name ? checkbox.checked = false: checkbox.checked = target.checked;
@@ -24,31 +17,20 @@ export default function PostDonate({payments, setPayments, charitiesId, name, cu
     const handleSubmit = (event) => {
         event.preventDefault()
         postPayment()
-
-        //const newPayment = {name: 'Somchai', old: 44, height: 222} 
-        // api.post(newPayment, 'payments').then(res => res === true 
-        //     ? api.get('payments').then(data =>  
-        //         data && !setPayments(data) && !alert('You re very kind. thank you.')
-        //     ).catch(e => console.error('Something wrong!, ', e)) 
-        //     : false)
-        // .catch(error => console.error('Post fail ', error))
     }
 
     const postPayment = async () => {
-        const newPayment = { 
-            charitiesId: parseInt(charitiesId, 10), 
-            amount: parseInt(checkbox.value, 10), 
+        const newPayment = {
+            charitiesId: parseInt(charitiesId, 10),
+            amount: parseInt(checkbox.value, 10),
             currency: currency,
             id: ++payments.length
         }
-
         // const data = await api.get('payments')
-        // newPayment.id = ++data.length
         const ok = await api.post(newPayment, 'payments');
         (ok && api.get('payments')
             .then(data => setPayments(data))
                 .catch(error => console.error('Fail to Get Payments:',error)));
-            
     }
 
 

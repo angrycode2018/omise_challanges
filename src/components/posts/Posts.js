@@ -12,18 +12,16 @@ export default function Posts({ charities } ) {
   }, [])
 
     const showCharities = () => {
-        return charities.map( (item, index) => 
-           (
-                <PostItem 
+        return charities.map(item => 
+           (<PostItem
                 payments={payments}
-                setPayments={setPayments} 
-                key={item.id} 
-                id={item.id} 
-                name={item.name} 
-                image={item.image} 
-                currency={item.currency} 
-                />
-            )
+                setPayments={setPayments}
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                image={item.image}
+                currency={item.currency}
+            />)
         ); 
       }
 

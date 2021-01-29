@@ -14,9 +14,6 @@ function App() {
     api.get('charities')
     .then( data => data ? setCharity(data): false )
       .catch(err => console.error('api.get: No response from Json-server!', err));
-    // api.get('payments')
-    // .then(data => setPayment(data))
-    //   .catch(err => console.log(`Error API Payments:`, err));
   },[]);
 
   
