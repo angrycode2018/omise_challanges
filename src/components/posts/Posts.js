@@ -1,7 +1,7 @@
 import React from 'react'
 import PostItem from './post-item/PostItem'
 
-export default function Posts({ charities, payments} ) {
+export default function Posts({ charities } ) {
 
     const showCharities = () => {
         return charities.map( (item, index) => 
