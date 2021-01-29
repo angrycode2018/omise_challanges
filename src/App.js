@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import JsonServer from './services/JsonServer';
 import Posts from './components/posts/Posts';
+import Navbar from './components/navbar/Navbar';
 import './App.css';
 
 const api = new JsonServer();
@@ -21,7 +22,7 @@ function App() {
   
   return (
       <div className="App">
-        <header>{'OMISE CHALLANGES'}</header>
+        <Navbar title='Omise Chanllanges'/>
         <Posts  charities={charities} />
       </div>
   );

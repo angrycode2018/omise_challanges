@@ -110,7 +110,11 @@ body {
     cursor: 'pointer';
 }
 
-
+.Navbar{
+    color: #ffffff;
+    padding: 10px;
+    background: #22AAA1;
+}
 
 .hide {
     display: none;
