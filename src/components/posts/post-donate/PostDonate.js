@@ -29,7 +29,7 @@ export default function PostDonate({payments, setPayments, charitiesId, name, cu
         // const data = await api.get('payments')
         const ok = await api.post(newPayment, 'payments');
         (ok && api.get('payments')
-            .then(data => setPayments(data))
+            .then(data => !setPayments(data) && alert('Thank you for donation.'))
                 .catch(error => console.error('Fail to Get Payments:',error)));
     }
 
